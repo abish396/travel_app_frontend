@@ -1,58 +1,90 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { Box, Image, Flex, Spacer, Container, SimpleGrid } from "@chakra-ui/react";
+
 export default function TrekMenu() {
   return (
-    <div className="row" style={{ marginTop: "20%" }}>
-      <div className="col-lg-2" style={{ marginLeft: "15%" }}>
-        <div className="card" style={{ width: "20rem", height: "500px" }}>
-          <img
-            className="card-img-top"
-            src="../../../assets/img/Alpinist4.svg"
-            alt="Card cap"
-          />
-          <div className="card-body">
-            <h4 className="card-title">Treks</h4>
-            <p className="card-text">Hit the list of treks</p>
+    <Fragment>
+      <Container maxW="container.xl">
+        <Flex style={{ marginTop: "20%" }}>
+          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+            <Image src={"https://image.freepik.com/free-vector/hiking-hand-drawn-poster_1284-16887.jpg"} />
+            <Box p="6">
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated
+              >
+                Treks
+          </Box>
+
+              <Box d="flex" mt="2" alignItems="center">
+                <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                  Hit the list of treks
             <Link to="/search/treks" className="btn btn-primary">
-              Find where you want to trek
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-2 offset-md-1">
-        <div className="card" style={{ width: "20rem", height: "500px" }}>
-          <img
-            img
-            className="card-img-top"
-            src="../../../assets/img/Offroad Adventure.svg"
-            alt="Card cap"
-          />
-          <div className="card-body">
-            <h4 className="card-title">Expeditions</h4>
-            <p className="card-text">Explore the wild</p>
-            <Link to="/search/expeditions" className="btn btn-primary">
-              Find what you want to expedite
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="col-lg-2 offset-md-1">
-        <div className="card" style={{ width: "20rem", height: "500px" }}>
-          <img
-            img
-            className="card-img-top"
-            src="../../../assets/img/Kids Sliding Down A Zipline.svg"
-            alt="Card cap"
-          />
-          <div className="card-body">
-            <h4 className="card-title">Adventures</h4>
-            <p className="card-text">Adventure more worry less</p>
-            <Link to="/search/adventures" className="btn btn-primary">
-              Find your next adventure destination
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+                    Find where you want to trek
+              </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Spacer />
+          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+            <Image src={"https://image.freepik.com/free-vector/explorer-with-backpack-background_52683-9666.jpg"} />
+            <Box p="6">
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated
+              >
+                Expeditions
+          </Box>
+
+              <Box d="flex" mt="2" alignItems="center">
+                <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                  Explore the wild
+            <Link to="/search/treks" className="btn btn-primary">
+                    Find what you want to expedite
+              </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Spacer />
+          <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+            <Image src={"https://image.freepik.com/free-vector/rock-climbing-logo-design-illustration_96485-223.jpg"} />
+            <Box p="6">
+              <Box
+                mt="1"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated
+              >
+                Adventures
+          </Box>
+
+              <Box d="flex" mt="2" alignItems="center">
+                <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                  Adventure more worry less
+            <Link to="/search/treks" className="btn btn-primary">
+                    Find your next adventure
+              </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        </Flex>
+      </Container>
+      <SimpleGrid minChildWidth="120px" spacing="0px" style={{ marginTop:"20%" }}>
+      <Box className="mt-5">
+        <Image style={{height:"300px", width:"100%"}} src={"https://image.freepik.com/free-vector/forest-panorama-view-pines-spruce-nature-landscape-forest-background-set-pine-spruce-christmas-tree-white-background-silhouette-forest-background-vector-illustration_230281-83.jpg"} />
+      </Box>
+      </SimpleGrid>
+    </Fragment>
   );
 }

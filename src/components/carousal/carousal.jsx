@@ -1,76 +1,31 @@
-import React, { useState } from "react";
-
-export default function Carousal() {
+/* This example requires Tailwind CSS v2.0+ */
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Box, Image, SimpleGrid, Heading, Text, Button, ButtonGroup, useDisclosure } from "@chakra-ui/react";
+import  LoginForm  from "../login/login";
+export default function Example() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  
   return (
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide"
-      data-ride="carousel"
-      style={{ height: "95vh" }}
-    >
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
-        <li
-          data-target="#carouselExampleIndicators"
-          data-slide-to="1"
-          class="active"
-        ></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item">
-          <img
-            class="d-block"
-            src="../../../assets/img/bg1.jpg"
-            alt="First slide"
-            width="100%"
-            height="720vh"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Nature, United States</h5>
-          </div>
-        </div>
-        <div class="carousel-item active">
-          <img
-            class="d-block"
-            src="../../../assets/img/bg3.jpg"
-            alt="Second slide"
-            width="100%"
-            height="720vh"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Somewhere Beyond, United States</h5>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img
-            class="d-block"
-            src="../../../assets/img/bg4.jpg"
-            alt="Third slide"
-            width="100%"
-            height="720vh"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Yellowstone National Park, United States</h5>
-          </div>
-        </div>
-      </div>
-      <a
-        class="carousel-control-prev"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="prev"
-      >
-        <i class="now-ui-icons arrows-1_minimal-left"></i>
-      </a>
-      <a
-        class="carousel-control-next"
-        href="#carouselExampleIndicators"
-        role="button"
-        data-slide="next"
-      >
-        <i class="now-ui-icons arrows-1_minimal-right"></i>
-      </a>
-    </div>
-  );
+    <SimpleGrid minChildWidth="120px" spacing="0px">
+      <Box style={{ marginTop: "30%" }}>
+        <Heading as="h2" size="3xl" fontWeight="extrabold">Best Treks, Expeditions, Adventures</Heading>
+        <Heading as="h2" size="3xl" fontWeight="extrabold">just one click away</Heading>
+        <Text className="mt-5" fontSize="xl">We help you find best trekking, adventure providing companies</Text>
+        <ButtonGroup className="mt-5" spacing="6">
+          <Button colorScheme="green" variant="solid" onClick={onOpen}>
+              Log In
+          </Button>
+          <Button colorScheme="green" variant="solid">
+              Sign Up
+          </Button>
+        </ButtonGroup>
+
+      </Box>
+      <Box  w="100%">
+        <Image style={{height:"1000px", width:"100%"}} src={"https://image.freepik.com/free-vector/hiking-abstract-concept-vector-illustration-active-lifestyle-mountain-climbing-outdoor-camping-trekking-trail-countryside-walking-travel-adventure-extreme-tourism-trip-abstract-metaphor_335657-4261.jpg"} />
+      </Box>
+      <LoginForm isOpen={isOpen} onClose={onClose}></LoginForm>
+    </SimpleGrid>
+  )
 }
